@@ -1,0 +1,11 @@
+{
+  "name": "sails-hook-routefactory",
+  "version": "1.0.0",
+  "description": "a hook to provide laravel-like route generation sugar",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -b"
+  },
+  "author": "Danny Hadley <dadleyy@gmail.com>",
+  "license": "ISC"
+}
