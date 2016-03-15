@@ -29,7 +29,7 @@ describe("sails-hook-routefactory test suite", function() {
       sails.config.routefactory = factory;
       sequence = null;
       registered_routes = null;
-    })LogLogoo;
+    });
 
     it("should bind \"GET /stuff\" on factory.get", function() {
       sequence = function(gen) {
