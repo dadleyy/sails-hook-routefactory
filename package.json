@@ -1,11 +1,25 @@
 {
   "name": "sails-hook-routefactory",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "a hook to provide laravel-like route generation sugar",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "mocha -b"
+    "coffee": "coffee -c -o \"lib\" ./src",
+    "test": "mocha -b",
+    "prepublish": "npm run coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dadleyy/sails-hook-routefactory.git"
+  },
+  "homepage": "https://github.com/dadleyy/sails-hook-routefactory",
+  "license": "MIT",
+  "sails": {
+    "isHook": true
   },
   "author": "Danny Hadley <dadleyy@gmail.com>",
-  "license": "ISC"
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.4.5"
+  }
 }
