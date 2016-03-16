@@ -1,11 +1,14 @@
 config/local.js
 node_modules
+.coveralls.yml
 bower_components
 .tmp
+*.lcov
 .env
 dump.rdb
 lib-cov
-/lib
+lib
+coverage
 *.seed
 *.log
 *.out
