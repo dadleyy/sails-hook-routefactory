@@ -9,4 +9,5 @@ script:
   - npm test
 after_script:
   - ./node_modules/.bin/jscover lib lib-cov
-  - JSCOV=1 ./node_modules/.bin/mocha test -R mocha-lcov-reporter | ./node_modules/.bin/codecov --token=$CODECOV_TOKEN
+  - JSCOV=1 ./node_modules/.bin/mocha test -R mocha-lcov-reporter > coverage.lcov
+  - ./node_modules/.bin/codecov --token=$CODECOV_TOKEN
