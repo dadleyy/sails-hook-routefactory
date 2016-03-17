@@ -1,6 +1,6 @@
 {
   "name": "sails-hook-routefactory",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a hook to provide laravel-like route generation sugar",
   "main": "index.js",
   "scripts": {
@@ -19,8 +19,8 @@
   },
   "author": "Danny Hadley <dadleyy@gmail.com>",
   "devDependencies": {
+    "codecov": "^1.0.1",
     "coffee-script": "^1.10.0",
-    "coveralls": "^2.11.8",
     "expect.js": "^0.3.1",
     "jscover": "^1.0.0",
     "mocha": "^2.4.5",

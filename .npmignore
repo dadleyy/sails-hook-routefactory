@@ -1,3 +1,7 @@
 *.coffee
 *.env
 .env
+lib-cov
+test
+.travis.yml
+*.lcov

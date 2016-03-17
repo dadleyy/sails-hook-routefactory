@@ -1,4 +1,4 @@
-var hook = process.env.JS_COV ? require("../lib-cov") : require("../lib"),
+var hook = process.env.JSCOV ? require("../lib-cov") : require("../lib"),
     expect = require("expect.js");
 
 

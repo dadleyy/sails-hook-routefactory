@@ -1,6 +1,7 @@
 # sails-hook-routefactory 
 
-![travis-ci](https://travis-ci.org/dadleyy/sails-hook-routefactory.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/dadleyy/sails-hook-routefactory/badge.svg?branch=master)](https://coveralls.io/github/dadleyy/sails-hook-routefactory?branch=master)
+[![Build Status](https://travis-ci.org/dadleyy/sails-hook-routefactory.svg?branch=master)](https://travis-ci.org/dadleyy/sails-hook-routefactory) [![codecov.io](https://codecov.io/github/dadleyy/sails-hook-routefactory/coverage.svg?branch=master)](https://codecov.io/github/dadleyy/sails-hook-routefactory?branch=master)
+
 
 A [sailsjs](http://sailsjs.org/) hook that allows a function under `sails.config.routefactory` to behave like [laravel's](https://laravel.com/docs/5.2/routing) routing engine.
 
