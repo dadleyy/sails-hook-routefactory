@@ -92,6 +92,79 @@ describe("sails-hook-routefactory test suite", function() {
       expect(lookup("PATCH /stuff")).to.equal("StuffController.update");
     });
 
+    describe("when using a group", function() {
+
+        beforeEach(function() {
+          sequence = function(gen) {
+            gen.group("admin", function() {
+              gen.resource("users", "UserController");
+              gen.get("/something", "SomethingController.index");
+
+              gen.group("cloud", function() {
+                gen.resource("vms", "VmController");
+              });
+
+            });
+          }
+        });
+
+        it("should bind \"GET /admin/something\" to \"SomethingController.index\"", function() {
+          hook(sails).initialize(finished);
+          expect(lookup("GET /admin/something")).to.be("SomethingController.index");
+        });
+
+        it("should bind \"POST /admin/cloud/vms\" to \"VmController.create\"", function() {
+          hook(sails).initialize(finished);
+          expect(lookup("POST /admin/cloud/vms")).to.equal("VmController.create");
+        });
+
+        it("should bind \"GET /admin/cloud/vms\" to \"VmController.find\"", function() {
+          hook(sails).initialize(finished);
+          expect(lookup("GET /admin/cloud/vms")).to.equal("VmController.find");
+        });
+
+        it("should bind \"GET /admin/cloud/vms/:id\" to \"VmController.findOne\"", function() {
+          hook(sails).initialize(finished);
+          expect(lookup("GET /admin/cloud/vms/:id")).to.equal("VmController.findOne");
+        });
+
+        it("should bind \"PATCH /admin/cloud/vms/:id\" to \"VmController.update\"", function() {
+          hook(sails).initialize(finished);
+          expect(lookup("PATCH /admin/cloud/vms/:id")).to.equal("VmController.update");
+        });
+
+        it("should bind \"DELETE /admin/cloud/vms/:id\" to \"VmController.destroy\"", function() {
+          hook(sails).initialize(finished);
+          expect(lookup("DELETE /admin/cloud/vms/:id")).to.equal("VmController.destroy");
+        });
+
+        it("should bind \"POST /admin/users\" to \"UserController.create\"", function() {
+          hook(sails).initialize(finished);
+          expect(lookup("POST /admin/users")).to.be("UserController.create");
+        });
+
+        it("should bind \"GET /admin/users\" to \"UserController.find\"", function() {
+          hook(sails).initialize(finished);
+          expect(lookup("GET /admin/users")).to.equal("UserController.find");
+        });
+
+        it("should bind \"GET /admin/users/:id\" to \"UserController.findOne\"", function() {
+          hook(sails).initialize(finished);
+          expect(lookup("GET /admin/users/:id")).to.equal("UserController.findOne");
+        });
+
+        it("should bind \"PATCH /admin/users/:id\" to \"UserController.update\"", function() {
+          hook(sails).initialize(finished);
+          expect(lookup("PATCH /admin/users/:id")).to.equal("UserController.update");
+        });
+
+        it("should bind \"DELETE /admin/users/:id\" to \"UserController.destroy\"", function() {
+          hook(sails).initialize(finished);
+          expect(lookup("DELETE /admin/users/:id")).to.equal("UserController.destroy");
+        });
+
+    });
+
     describe("when using the resource function", function() {
 
       describe("when using no extras", function() {
